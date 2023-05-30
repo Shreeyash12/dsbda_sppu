@@ -1,0 +1,22 @@
+from scipy import stats
+threshold = 3
+z_scores = np.abs(stats.zscore(df['placement_score']))
+outliers = df[np.abs(z_scores) > threshold]
+print("df")
+print(df)
+print()
+
+print("z_scores")
+print(z_scores)
+print()
+
+print("outliers")
+print(outliers)
+----------------------------------------------------------------------------------------------------------------------
+data=pd.read_csv("C://Users//shreeyash//OneDrive//Desktop//shreecsv.csv").replace(np.nan,value=78)
+print(data)
+-----------------------------------------------------------------------------------------------------------------------
+df['placement_score']=df['placement_score'].fillna(df['placement_score'].median())
+print (df)
+-----------------------------------------------------------------------------------------------------------------------
+sns.boxplot(y=df['readig_score'])
